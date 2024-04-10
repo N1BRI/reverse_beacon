@@ -17,11 +17,7 @@ const int timeout = 25;
 class ReverseBeacon {
   Socket? cwSocket;
   Socket? digiSocket;
-  StreamController<Spot>? controller;
-
-  ReverseBeacon() {
-    controller = StreamController();
-  }
+  StreamController<Spot> controller = StreamController();
 
   Future<void> connect({required callsign}) async {
     if (!isValidCallsign(callsign)) {
