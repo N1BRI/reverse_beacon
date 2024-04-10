@@ -1,0 +1,22 @@
+DX de G4IRN-#:    7074.0  RM9WU          FT8    1 dB          CQ      1853Z
+DX de G4IRN-#:    7074.0  PD0IDQ         FT8   -6 dB  JO22    CQ      1853Z
+DX de G4IRN-#:   21140.0  OZ2ND          FT4  -10 dB          CQ      1853Z
+DX de G4IRN-#:   21140.0  AO75IC         FT4    9 dB  AO75    CQ      1853Z
+DX de G4IRN-#:   14080.0  AO75PA         FT4   14 dB  AO75    CQ      1853Z
+DX de G4IRN-#:   14074.0  EA1FCS         FT8   -2 dB          CQ      1853Z
+DX de G4IRN-#:   14074.0  PA8DC          FT8  -11 dB          CQ      1853Z
+DX de G4IRN-#:   14074.0  AA3WA          FT8   -1 dB          CQ      1853Z
+DX de G4IRN-#:   14074.0  RV3YN          FT8   10 dB          CQ      1853Z
+DX de G4IRN-#:   14074.0  MM0HVU         FT8   -9 dB  IO85    CQ      1853Z
+DX de G4IRN-#:   14080.0  UA3UBT         FT4   20 dB          CQ      1853Z
+DX de G4IRN-#:   14080.0  EA8COX         FT4    7 dB          CQ      1853Z
+DX de G4IRN-#:   14080.0  OK1FJN         FT4   -7 dB          CQ      1853Z
+DX de SQ5OUO-#:  18100.0  MM0HVU         FT8   -2 dB  IO85    CQ      1853Z
+DX de SQ5OUO-#:  18100.0  AO75MC         FT8   -6 dB  AO75    CQ      1853Z
+DX de SQ5OUO-#:   3573.0  DO1CCW         FT8   -9 dB  JO43    CQ      1853Z
+DX de SQ5OUO-#:   3573.0  DO8WA          FT8  -12 dB  JO30    CQ      1853Z
+DX de SQ5OUO-#:   3573.0  IZ5TMB         FT8  -14 dB          CQ      1853Z
+DX de SQ5OUO-#:  24915.0  W1JKN          FT8   -8 dB          CQ      1853Z
+DX de K5EM-#:    18095.0  AA9LC          FT8    6 dB          CQ      1853Z
+DX de LZ4UX-#:   14080.0  UA3UBT         FT4   22 dB          CQ      1853Z
+DX de LZ4UX-#:   28074.0  CT7AIU         FT8   -7 dB          CQ      1853Z

@@ -1,0 +1,18 @@
+DX de ZF9CW-#:   14042.6  K5MR           CW    18 dB  38 WPM  CQ      1854Z
+DX de KV4TT-#:   28260.0  WY7DT/B        CW     8 dB  12 WPM  BEACON  1854Z
+DX de W1NT-6-#:  21150.0  YV5B           CW    11 dB  22 WPM  NCDXF B 1854Z
+DX de OZ4ADX-#:  14036.5  AC1RM          CW    13 dB  39 WPM  CQ      1854Z
+DX de OZ4ADX-#:  14037.0  SN5N           CW    10 dB  28 WPM  CQ      1854Z
+DX de IK3STG-#:   3515.0  UI7D           CW    15 dB  34 WPM  CQ      1854Z
+DX de OK1HRA-#:  21023.9  AO75GA         CW     9 dB  22 WPM  CQ      1854Z
+DX de OK1HRA-#:  10116.2  F6IW           CW    15 dB  21 WPM  CQ      1854Z
+DX de OK4QRO-#:  21015.1  EC5ACA         CW    11 dB  16 WPM  CQ      1854Z
+DX de R6YY-#:     3526.5  R5FP           CW    22 dB  44 WPM  CQ      1854Z
+DX de NG7M-#:    14042.5  K5MR           CW    19 dB  36 WPM  CQ      1854Z
+DX de G4ZFE-#:   18110.0  4U1UN          CW    15 dB  22 WPM  NCDXF B 1854Z
+DX de KP3CW-#:   14042.6  K5MR           CW     6 dB  36 WPM  CQ      1854Z
+DX de WB6BEE-#:  14036.5  AC1RM          CW    31 dB  39 WPM  CQ      1854Z
+DX de WB6BEE-#:  21034.6  AC1RM          CW    10 dB  40 WPM  CQ      1854Z
+DX de 3V8SS-#:    3510.0  AO75CV         CW    10 dB  25 WPM  CQ      1854Z
+DX de AC0C-1-#:  14042.6  K5MR           CW    21 dB  37 WPM  CQ      1854Z
+DX de DL9GTB-#:  21009.9  SP2MDS         CW     7 dB  20 WPM  CQ      1854Z
