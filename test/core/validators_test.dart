@@ -3,19 +3,19 @@ import 'package:test/test.dart';
 
 void main(){
 
-  test('W1AW callsign should return true 1', (){
+  test('W1AW callsign should return true', (){
     expect(isValidCallsign('W1AW'), true);
   });
 
-  test('W1N callsign should return true 2', (){
+  test('W1N callsign should return true', (){
     expect(isValidCallsign('W1N'), true);
   });
 
-  test('0x1ww callsign should return true 2', (){
+  test('0x1ww callsign should return true', (){
     expect(isValidCallsign('0x1ww'), true);
   });
   
-   test('ea3rc callsign should return true 2', (){
+   test('ea3rc callsign should return true', (){
     expect(isValidCallsign('ea3rc'), true);
   });
   test('Wwwwwww callsign should return false', (){
