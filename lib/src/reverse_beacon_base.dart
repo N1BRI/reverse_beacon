@@ -15,20 +15,20 @@ const int digiPort = 7001;
 const int timeout = 25;
 
 class ReverseBeacon {
-  Socket? cwSocket;
-  Socket? digiSocket;
-  StreamController<Spot> controller = StreamController.broadcast();
+  Socket? _cwSocket;
+  Socket? _digiSocket;
+  final StreamController<Spot> _controller = StreamController.broadcast();
 
   Future<void> connect({required callsign}) async {
     if (!isValidCallsign(callsign)) {
       throw InvalidCallsignException();
     }
-    cwSocket = await Socket.connect(host, cwPort,
+    _cwSocket = await Socket.connect(host, cwPort,
         timeout: const Duration(seconds: timeout));
-    digiSocket = await Socket.connect(host, digiPort,
+    _digiSocket = await Socket.connect(host, digiPort,
         timeout: const Duration(seconds: timeout));
 
-    cwSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
+    _cwSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
         (event) {
       var spots = utf8
           .decode(event)
@@ -37,16 +37,16 @@ class ReverseBeacon {
           .toList();
 
       if (spots[0] == "Please enter your call: ") {
-        cwSocket?.add(utf8.encode('$callsign\r\n'));
+        _cwSocket?.add(utf8.encode('$callsign\r\n'));
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          controller.add(CWSpot.fromTelnetText(spots[i]));
+          _controller.add(CWSpot.fromTelnetText(spots[i]));
         }
       }
     });
 
-    digiSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
+    _digiSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
         (event) {
       var spots = utf8
           .decode(event)
@@ -55,13 +55,24 @@ class ReverseBeacon {
           .toList();
 
       if (spots[0] == "Please enter your call: ") {
-        digiSocket?.add(utf8.encode('$callsign\r\n'));
+        _digiSocket?.add(utf8.encode('$callsign\r\n'));
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          controller.add(DigiSpot.fromTelnetText(spots[i]));
+          _controller.add(DigiSpot.fromTelnetText(spots[i]));
         }
       }
     });
   }
+
+  void listen(Function(Spot spot) onListen){
+    _controller.stream.listen(onListen);
+  }
+
+  void close() async{
+    await _cwSocket?.close();
+    await _digiSocket?.close();
+    _controller.close();
+  }
+
 }

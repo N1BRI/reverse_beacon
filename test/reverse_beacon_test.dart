@@ -1,5 +1,4 @@
 import 'package:reverse_beacon/reverse_beacon.dart';
-import 'package:reverse_beacon/src/exceptions.dart';
 import 'package:reverse_beacon/src/spot.dart';
 import 'package:test/test.dart';
 
@@ -12,6 +11,8 @@ void main(){
    test('valid call should emit spots', () async{
     var tRb = ReverseBeacon();
     await tRb.connect(callsign: 'n1bri');
-    await expectLater(tRb.controller?.stream, emits(TypeMatcher<Spot>()));
+    tRb.listen((spot) {
+      expect(spot, emits(TypeMatcher<Spot>()));
+    });
   });
 }

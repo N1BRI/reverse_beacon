@@ -1,8 +1,9 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+
 library;
 
 export 'src/reverse_beacon_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/cw_spot.dart';
+export 'package:reverse_beacon/reverse_beacon.dart';
+export 'package:reverse_beacon/src/band.dart';
+export 'package:reverse_beacon/src/exceptions.dart';
+export 'package:reverse_beacon/src/mode.dart';
