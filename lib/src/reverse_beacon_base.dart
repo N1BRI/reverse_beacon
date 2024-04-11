@@ -17,7 +17,7 @@ const int timeout = 25;
 class ReverseBeacon {
   Socket? cwSocket;
   Socket? digiSocket;
-  StreamController<Spot> controller = StreamController();
+  StreamController<Spot> controller = StreamController.broadcast();
 
   Future<void> connect({required callsign}) async {
     if (!isValidCallsign(callsign)) {
@@ -28,7 +28,7 @@ class ReverseBeacon {
     digiSocket = await Socket.connect(host, digiPort,
         timeout: const Duration(seconds: timeout));
 
-    cwSocket?.listen(onError: (error) => throw SocketCommunicationException(),
+    cwSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
         (event) {
       var spots = utf8
           .decode(event)
@@ -41,12 +41,12 @@ class ReverseBeacon {
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          controller?.add(CWSpot.fromTelnetText(spots[i]));
+          controller.add(CWSpot.fromTelnetText(spots[i]));
         }
       }
     });
 
-    digiSocket?.listen(onError: (error) => throw SocketCommunicationException(),
+    digiSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
         (event) {
       var spots = utf8
           .decode(event)
@@ -59,7 +59,7 @@ class ReverseBeacon {
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          controller?.add(DigiSpot.fromTelnetText(spots[i]));
+          controller.add(DigiSpot.fromTelnetText(spots[i]));
         }
       }
     });

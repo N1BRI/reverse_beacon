@@ -1,2 +1,2 @@
 class InvalidCallsignException implements Exception{}
-class SocketCommunicationException implements Exception{}
+class TelnetCommunicationException implements Exception{}
