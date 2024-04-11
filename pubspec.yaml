@@ -1,7 +1,7 @@
 name: reverse_beacon
-description: A starting point for Dart libraries or applications.
+description: transforms the reverse beacon telnet CW and DIGI servers into a controllable stream 
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/N1BRI/reverse_beacon
 
 environment:
   sdk: ^3.2.6
@@ -9,7 +9,6 @@ environment:
 # Add regular dependencies here.
 dependencies:
   intl: ^0.19.0
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^2.1.0

@@ -41,13 +41,17 @@ class ReverseBeacon {
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          _controller.add(CWSpot.fromTelnetText(spots[i]));
+          Spot? spot;
+          try {
+            spot = CWSpot.fromTelnetText(spots[i]);
+            _controller.add(spot);
+          } catch (_) {} // garbage from telnet is possible
         }
       }
     });
 
-    _digiSocket?.listen(onError: (error) => throw TelnetCommunicationException(),
-        (event) {
+    _digiSocket?.listen(
+        onError: (error) => throw TelnetCommunicationException(), (event) {
       var spots = utf8
           .decode(event)
           .split('\n')
@@ -59,20 +63,23 @@ class ReverseBeacon {
       } else {
         spots = spots.where((e) => e.startsWith('DX')).toList();
         for (int i = 0; i < spots.length; i++) {
-          _controller.add(DigiSpot.fromTelnetText(spots[i]));
+          Spot? spot;
+          try {
+            spot = DigiSpot.fromTelnetText(spots[i]);
+            _controller.add(spot);
+          } catch (_) {} // garbage from telnet is possible
         }
       }
     });
   }
 
-  void listen(Function(Spot spot) onListen){
+  void listen(Function(Spot spot) onListen) {
     _controller.stream.listen(onListen);
   }
 
-  void close() async{
+  void close() async {
     await _cwSocket?.close();
     await _digiSocket?.close();
     _controller.close();
   }
-
 }
