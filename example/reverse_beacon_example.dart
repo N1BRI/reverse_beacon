@@ -19,13 +19,21 @@ void main() async {
   int spotCount = 0;
   rb.listen((spot) {
     //filter
-    if (spot.band == Band.meters20 && spot.mode == Mode.cw) {
-      if ((spot as CWSpot).wpm >= 15) {
+    if (spotCount < 5) {
+      if (spot.band == Band.meters20 && spot.mode == Mode.cw) {
+        if ((spot as CWSpot).wpm >= 15) {
+          print(spot);
+          spotCount++;
+        }
+      }
+    } else if (spotCount >= 5) {
+      if (spot.band == Band.meters20 && spot.mode == Mode.ft8) {
         print(spot);
         spotCount++;
       }
     }
-    if (spotCount == 5) {
+
+    if (spotCount == 10) {
       rb.close();
     }
   });
