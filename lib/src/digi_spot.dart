@@ -18,7 +18,7 @@ class DigiSpot extends Spot {
       required super.time,
       required super.spotType});
 
-   factory DigiSpot.fromTelnetText(String spotText) {
+  factory DigiSpot.fromTelnetText(String spotText) {
     var tokens = spotText.split(" ").where((t) => t.isNotEmpty).toList();
     var freq = double.tryParse(tokens[3]) ?? 0;
     return DigiSpot(
@@ -29,12 +29,15 @@ class DigiSpot extends Spot {
         mode: Mode.fromString(tokens[5]),
         db: int.tryParse(tokens[6]) ?? 0,
         gridSquare: tokens.length == 10 ? "N/A" : tokens[8],
-        time: dateTimeFromUtcTimeString(tokens.last.length >= 4 ? tokens.last.substring(0,4) : "N/A"),
-        spotType: tokens.length == 10 ? SpotType.fromString(tokens[8]) : SpotType.fromString(tokens[9]));
+        time: dateTimeFromUtcTimeString(
+            tokens.last.length >= 4 ? tokens.last.substring(0, 4) : "N/A"),
+        spotType: tokens.length == 10
+            ? SpotType.fromString(tokens[8])
+            : SpotType.fromString(tokens[9]));
   }
 
   @override
-  String toString(){
+  String toString() {
     var band = Band.getBand(frequency);
     return "skimmer: $skimmerCall, spotted: $spottedCall, gridsquare: $gridSquare, mode: $mode , band: $band, freq: $frequency KHz, @${DateFormat('HH:mm').format(time)} , snr: $db, type: $spotType";
   }

@@ -30,12 +30,13 @@ class CWSpot extends Spot {
         mode: Mode.fromString(tokens[5]),
         db: int.tryParse(tokens[6]) ?? 0,
         wpm: int.tryParse(tokens[8]) ?? 0,
-        time: dateTimeFromUtcTimeString(tokens.last.length >= 4 ? tokens.last.substring(0,4) : "N/A"),
+        time: dateTimeFromUtcTimeString(
+            tokens.last.length >= 4 ? tokens.last.substring(0, 4) : "N/A"),
         spotType: SpotType.fromString(tokens[10]));
   }
 
   @override
-  String toString(){
+  String toString() {
     return "skimmer: $skimmerCall, spotted: $spottedCall, wpm: $wpm, mode: $mode , band: $band, freq: $frequency KHz, @${DateFormat('HH:mm').format(time)} , snr: $db, type: $spotType";
   }
 }

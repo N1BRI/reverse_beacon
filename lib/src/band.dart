@@ -22,10 +22,13 @@ enum Band {
   const Band(this.lowerFrequencyKHz, this.upperFrequencyKHz);
 
   static Band? getBand(double frequencyKHz) {
-  // Convert the double to int to avoid floating-point precision issues
-  // during comparison with integer bounds
-  final int roundedFrequency = frequencyKHz.round();
-  return values.where((band) =>
-      roundedFrequency >= band.lowerFrequencyKHz && roundedFrequency <= band.upperFrequencyKHz).firstOrNull;
-}
+    // Convert the double to int to avoid floating-point precision issues
+    // during comparison with integer bounds
+    final int roundedFrequency = frequencyKHz.round();
+    return values
+        .where((band) =>
+            roundedFrequency >= band.lowerFrequencyKHz &&
+            roundedFrequency <= band.upperFrequencyKHz)
+        .firstOrNull;
+  }
 }

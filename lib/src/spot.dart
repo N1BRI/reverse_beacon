@@ -11,7 +11,7 @@ class Spot {
   final int db;
   final DateTime time;
   final SpotType spotType;
-  
+
   const Spot(
       {required this.skimmerCall,
       required this.frequency,
