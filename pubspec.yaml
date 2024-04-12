@@ -1,6 +1,6 @@
 name: reverse_beacon
 description: transforms the reverse beacon telnet CW and DIGI servers into a controllable stream 
-version: 1.0.2
+version: 1.0.3
 repository: https://github.com/N1BRI/reverse_beacon
 
 environment:

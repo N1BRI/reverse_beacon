@@ -10,3 +10,7 @@
 ## 1.0.2
 
 - Export fixes
+
+## 1.0.3
+
+- change listen method signature -- now returns the subscription

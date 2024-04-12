@@ -75,8 +75,8 @@ class ReverseBeacon {
     });
   }
 
-  void listen(Function(Spot spot) onListen) {
-    _controller.stream.listen(onListen);
+  StreamSubscription<Spot> listen(Function(Spot spot) onListen) {
+    return _controller.stream.listen(onListen);
   }
 
   void close() async {
