@@ -1,3 +1,4 @@
+/// Represents a spot type as identified by reverse beacon network
 enum SpotType {
   cq,
   beacon,
@@ -6,6 +7,7 @@ enum SpotType {
   ncdxf,
   unknown;
 
+  /// converts a string to a spot type
   static SpotType fromString(String rawType) {
     switch (rawType.toUpperCase().split(' ').first) {
       case 'CQ':

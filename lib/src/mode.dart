@@ -1,3 +1,4 @@
+/// Represents a ham radio communication mode
 enum Mode {
   cw,
   ft8,
@@ -5,6 +6,7 @@ enum Mode {
   rtty,
   na;
 
+  /// parses Mode from a string
   static Mode fromString(String modeStr) {
     modeStr = modeStr.toUpperCase();
     switch (modeStr) {

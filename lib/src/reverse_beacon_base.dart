@@ -14,6 +14,8 @@ const int cwPort = 7000;
 const int digiPort = 7001;
 const int timeout = 25;
 
+/// A controller object that manages two telnet connections to telnet.reversebeacon.net
+/// Creates and exposes one stream of spots from both digital and cw telnet servers
 class ReverseBeacon {
   Socket? _cwSocket;
   Socket? _digiSocket;

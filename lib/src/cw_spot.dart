@@ -6,6 +6,7 @@ import 'package:reverse_beacon/src/core/utilities.dart';
 
 import 'spot.dart';
 
+/// Represents an CW or RTTY spot
 class CWSpot extends Spot {
   final int wpm;
   const CWSpot(

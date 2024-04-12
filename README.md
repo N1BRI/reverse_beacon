@@ -18,6 +18,8 @@ this wouldn't work without them***
 import 'dart:io';
 
 import 'package:reverse_beacon/reverse_beacon.dart';
+import 'package:reverse_beacon/src/cw_spot.dart';
+import 'package:reverse_beacon/src/reverse_beacon_base.dart';
 
 void main() async {
   var rb = ReverseBeacon();
@@ -55,7 +57,6 @@ void main() async {
     }
   });
 }
-
 
 ```
 

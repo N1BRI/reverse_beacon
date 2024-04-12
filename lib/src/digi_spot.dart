@@ -5,6 +5,7 @@ import 'package:reverse_beacon/src/spot.dart';
 import 'package:reverse_beacon/src/spot_type.dart';
 import 'package:reverse_beacon/src/core/utilities.dart';
 
+/// Represents an FT8 or FT4 spot
 class DigiSpot extends Spot {
   final String? gridSquare;
   const DigiSpot(
