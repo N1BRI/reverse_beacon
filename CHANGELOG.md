@@ -14,3 +14,7 @@
 ## 1.0.3
 
 - change listen method signature -- now returns the subscription
+
+## 1.0.4
+
+- fix small formatting issues

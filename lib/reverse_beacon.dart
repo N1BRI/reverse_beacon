@@ -1,4 +1,3 @@
-
 library;
 
 export 'package:reverse_beacon/reverse_beacon.dart';

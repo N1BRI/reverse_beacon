@@ -19,7 +19,7 @@ void main() async {
     exit(-1);
   }
   int spotCount = 0;
-  rb.listen((spot) {
+  var subscription = rb.listen((spot) {
     //filter
     if (spotCount < 5) {
       if (spot.band == Band.meters20 && spot.mode == Mode.cw) {
@@ -34,9 +34,12 @@ void main() async {
         spotCount++;
       }
     }
-
-    if (spotCount == 10) {
-      rb.close();
-    }
   });
+  if (spotCount > 15){
+    subscription.pause();
+    Future.delayed(Duration(seconds: 1));
+    subscription.resume();
+    subscription.cancel();
+    rb.close();
+  }
 }
