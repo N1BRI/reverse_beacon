@@ -18,3 +18,7 @@
 ## 1.0.4
 
 - fix small formatting issues
+
+## 1.0.5
+
+- expose cw_spot type

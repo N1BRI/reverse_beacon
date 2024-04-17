@@ -7,6 +7,7 @@ export 'package:reverse_beacon/src/mode.dart';
 export 'package:reverse_beacon/src/spot.dart';
 export 'package:reverse_beacon/src/spot_type.dart';
 export 'package:reverse_beacon/src/digi_spot.dart';
+export 'package:reverse_beacon/src/cw_spot.dart';
 export 'package:reverse_beacon/src/core/utilities.dart';
 export 'package:reverse_beacon/src/core/validators.dart';
 export 'package:reverse_beacon/src/reverse_beacon_base.dart';
